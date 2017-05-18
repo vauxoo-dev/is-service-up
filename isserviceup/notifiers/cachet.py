@@ -63,7 +63,7 @@ class Cachet(Notifier):
             return {}
 
     def _get_component_name(self, service):
-        return type(service).__name__
+        return service.id
 
     def _get_component_url(self, service):
         component = self._get_component_name(service)
