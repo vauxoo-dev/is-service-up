@@ -9,3 +9,5 @@ eventlet
 celery
 raven
 blinker
+gevent
+mongoengine

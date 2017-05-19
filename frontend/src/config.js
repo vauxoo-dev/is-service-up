@@ -1,11 +1,22 @@
-export var API_HOST = 'http://localhost:8000';
+export var API_HOST = process.env.API_HOST || "http://localhost:8000";
 export var SERVICES_REFRESH_INTERVAL = 30;
+export var GITHUB_CLIENT_ID = process.env.GITHUB_CLIENT_ID || console.log('No GITHUB_CLIENT_ID defined');
+export var GITHUB_LOGIN_URL = 'https://github.com/login/oauth/authorize?client_id=' + GITHUB_CLIENT_ID;
+
+export var STATUS_LIST = [
+  'unavailable',
+  'maintenance',
+  'ok',
+  'minor',
+  'major',
+  'critical',
+];
 
 export var STATUS_DESCRIPTION = {
   ok: 'Operational',
-  minor: 'Degraded Performance',
-  major: 'Partial Outage',
-  critical: 'Major Outage',
+  minor: 'Minor Outage',
+  major: 'Major Outage',
+  critical: 'Critical Outage',
   maintenance: 'Maintenance',
   unavailable: 'Status Unavailable',
 };
